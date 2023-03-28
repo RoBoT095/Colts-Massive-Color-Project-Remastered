@@ -41,7 +41,12 @@ export default function App() {
                 />
                 <Route
                     path="/palette/new"
-                    element={<NewPaletteForm savePalette={savePalette} />}
+                    element={
+                        <NewPaletteForm
+                            savePalette={savePalette}
+                            palettes={palettes}
+                        />
+                    }
                 />
                 <Route path="/palette/:id" element={<PaletteWrapper />} />
                 <Route
