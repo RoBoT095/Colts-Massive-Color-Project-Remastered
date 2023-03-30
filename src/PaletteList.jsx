@@ -17,7 +17,7 @@ export default class PaletteList extends Component {
                     </nav>
                     <div className="PaletteList-palettes">
                         {palettes.map((palette) => (
-                            <MiniPalette {...palette} />
+                            <MiniPalette {...palette} key={palette.id} />
                         ))}
                     </div>
                 </div>
