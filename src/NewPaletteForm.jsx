@@ -13,6 +13,7 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import DraggableColorList from "./DraggableColorList";
 import PaletteFormNav from "./PaletteFormNav";
 import ColorPickerForm from "./ColorPickerForm";
+import "./styles/NewPaletteForm.css";
 
 export const drawerWidth = 350;
 
@@ -111,6 +112,8 @@ export default function NewPaletteForm(props) {
                     "& .MuiDrawer-paper": {
                         width: drawerWidth,
                         boxSizing: "border-box",
+                        display: "flex",
+                        alignItems: "center",
                     },
                 }}
                 variant="persistent"
@@ -123,29 +126,35 @@ export default function NewPaletteForm(props) {
                     </IconButton>
                 </DrawerHeader>
                 <Divider />
-                <Typography variant="h4">Design Your Palette</Typography>
-                <div>
-                    <Button
-                        variant="contained"
-                        color="secondary"
-                        onClick={clearColors}
-                    >
-                        Clear Palette
-                    </Button>
-                    <Button
-                        variant="contained"
-                        color="primary"
-                        onClick={addRandomColor}
-                        disabled={paletteIsFull}
-                    >
-                        Random Color
-                    </Button>
+                <div className="NPF-container">
+                    <Typography variant="h4" gutterBottom>
+                        Design Your Palette
+                    </Typography>
+                    <div className="NPF-buttons">
+                        <Button
+                            variant="contained"
+                            color="secondary"
+                            onClick={clearColors}
+                            className="NPF-button"
+                        >
+                            Clear Palette
+                        </Button>
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            onClick={addRandomColor}
+                            disabled={paletteIsFull}
+                            className="NPF-button"
+                        >
+                            Random Color
+                        </Button>
+                    </div>
+                    <ColorPickerForm
+                        colors={colors}
+                        paletteIsFull={paletteIsFull}
+                        addNewColor={addNewColor}
+                    />
                 </div>
-                <ColorPickerForm
-                    colors={colors}
-                    paletteIsFull={paletteIsFull}
-                    addNewColor={addNewColor}
-                />
             </Drawer>
             <Main open={open}>
                 <DrawerHeader />

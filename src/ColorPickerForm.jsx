@@ -4,6 +4,7 @@ import Button from "@mui/material/Button";
 // Material UI Stuff Ends
 import { ChromePicker } from "react-color";
 import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
+import "./styles/ColorPickerForm.css";
 
 export default function ColorPickerForm(props) {
     const [currentColor, setCurrentColor] = useState("#EF5959");
@@ -42,6 +43,7 @@ export default function ColorPickerForm(props) {
     return (
         <div>
             <ChromePicker
+                className="CPF-picker"
                 color={currentColor}
                 onChangeComplete={updateCurrentColor}
             />
@@ -50,9 +52,11 @@ export default function ColorPickerForm(props) {
                     id="filled-error-helper-text"
                     label="Color Name"
                     value={newColorName}
+                    className="CPF-colorNameInput"
                     name="newColorName"
-                    onChange={handleChange}
                     variant="filled"
+                    margin="normal"
+                    onChange={handleChange}
                     validators={[
                         "required",
                         "isColorNameUnique",
@@ -66,8 +70,9 @@ export default function ColorPickerForm(props) {
                 />
                 <Button
                     variant="contained"
-                    type="submit"
                     color="primary"
+                    className="CPF-addColor"
+                    type="submit"
                     disabled={paletteIsFull}
                     style={{
                         backgroundColor: paletteIsFull ? "grey" : currentColor,

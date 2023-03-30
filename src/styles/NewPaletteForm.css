@@ -1,0 +1,15 @@
+.NPF-container {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.NPF-buttons {
+    width: 100%;
+}
+.NPF-buttons .NPF-buttons {
+    width: 50%;
+}

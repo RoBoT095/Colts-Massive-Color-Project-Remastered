@@ -1,0 +1,16 @@
+.CPF-picker {
+    width: 100% !important;
+    margin-top: 2rem;
+}
+
+.CPF-colorNameInput {
+    width: 100%;
+    height: 70px;
+}
+
+.CPF-addColor {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+}
