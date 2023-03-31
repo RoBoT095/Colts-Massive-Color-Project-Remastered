@@ -25,23 +25,23 @@ export default class ColorBox extends Component {
                 <div style={{ background }} className="ColorBox">
                     <div
                         style={{ background }}
-                        className={`copy-overlay ${copied && "show"}`}
+                        className={`copy-overlay ${copied ? "show" : ""}`}
                     />
-                    <div className={`copy-msg ${copied && "show"}`}>
+                    <div className={`copy-msg ${copied ? "show" : ""}`}>
                         <h1>copied!</h1>
-                        <p className={isLightColor && "dark-text"}>
+                        <p className={isLightColor ? "dark-text" : ""}>
                             {background}
                         </p>
                     </div>
                     <div className="copy-container">
                         <div className="box-content">
-                            <span className={isDarkColor && "light-text"}>
+                            <span className={isDarkColor ? "light-text" : ""}>
                                 {name}
                             </span>
                         </div>
                         <button
                             className={`copy-button ${
-                                isLightColor && "dark-text"
+                                isLightColor ? "dark-text" : ""
                             }`}
                         >
                             Copy
@@ -54,7 +54,7 @@ export default class ColorBox extends Component {
                             >
                                 <span
                                     className={`see-more ${
-                                        isLightColor && "dark-text"
+                                        isLightColor ? "dark-text" : ""
                                     }`}
                                 >
                                     More
