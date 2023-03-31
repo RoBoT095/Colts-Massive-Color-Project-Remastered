@@ -37,6 +37,8 @@ export default function PaletteFormNav(props) {
 
     const showForm = () => setFormShowing(true);
 
+    const hideForm = () => setFormShowing(false);
+
     const {
         open,
         handleDrawerOpen,
@@ -95,6 +97,7 @@ export default function PaletteFormNav(props) {
                     newPaletteName={newPaletteName}
                     setNewPaletteName={setNewPaletteName}
                     handleSubmit={handleSubmit}
+                    hideForm={hideForm}
                 />
             ) : (
                 ""
