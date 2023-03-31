@@ -1,6 +1,15 @@
-.PaletteFormNav {
+.PaletteFormNav .PFN-appBar {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
 }
 
-/* .PFNav-navBtns {
-} */
+.PFNav-navBtns {
+    margin-right: 1rem;
+}
+
+.PFNav-navBtns .button {
+    margin: 0 0.5rem;
+}

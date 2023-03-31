@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 // Material UI Stuff Starts
 import { styled } from "@mui/material/styles";
@@ -29,13 +29,14 @@ const AppBar = styled(MuiAppBar, {
             easing: theme.transitions.easing.easeOut,
             duration: theme.transitions.duration.enteringScreen,
         }),
-        flexDirection: "row",
-        justifyContent: "space-between",
-        height: "64px",
     }),
 }));
 
 export default function PaletteFormNav(props) {
+    const [formShowing, setFormShowing] = useState(false);
+
+    const showForm = () => setFormShowing(true);
+
     const {
         open,
         handleDrawerOpen,
@@ -48,7 +49,12 @@ export default function PaletteFormNav(props) {
     return (
         <Box className="PaletteFormNav">
             <CssBaseline />
-            <AppBar position="fixed" open={open} color="default">
+            <AppBar
+                className="PFN-appBar"
+                position="fixed"
+                open={open}
+                color="default"
+            >
                 <Toolbar>
                     <IconButton
                         color="inherit"
@@ -64,19 +70,35 @@ export default function PaletteFormNav(props) {
                     </Typography>
                 </Toolbar>
                 <div className="PFNav-navBtns">
-                    <PaletteMetaForm
-                        palettes={palettes}
-                        newPaletteName={newPaletteName}
-                        setNewPaletteName={setNewPaletteName}
-                        handleSubmit={handleSubmit}
-                    />
                     <Link to="/">
-                        <Button variant="contained" color="secondary">
+                        <Button
+                            className="button"
+                            variant="contained"
+                            color="secondary"
+                        >
                             Go Back
                         </Button>
                     </Link>
+                    <Button
+                        className="button"
+                        variant="contained"
+                        color="primary"
+                        onClick={showForm}
+                    >
+                        Save
+                    </Button>
                 </div>
             </AppBar>
+            {formShowing ? (
+                <PaletteMetaForm
+                    palettes={palettes}
+                    newPaletteName={newPaletteName}
+                    setNewPaletteName={setNewPaletteName}
+                    handleSubmit={handleSubmit}
+                />
+            ) : (
+                ""
+            )}
         </Box>
     );
 }
