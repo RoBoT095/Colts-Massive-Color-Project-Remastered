@@ -13,3 +13,13 @@
 .PFNav-navBtns .button {
     margin: 0 0.5rem;
 }
+
+@media screen and (max-width: 575.98px) {
+    .PFNav-navBtns {
+        margin-right: 0.5rem;
+    }
+    .PFNav-navBtns .button {
+        margin: 0 0.05rem;
+        padding: 2px;
+    }
+}

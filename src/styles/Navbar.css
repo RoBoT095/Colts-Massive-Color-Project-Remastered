@@ -50,3 +50,15 @@
     margin-left: auto;
     margin-right: 1rem;
 }
+
+@media screen and (max-width: 991.98px) {
+    .slider {
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 575.98px) {
+    .logo {
+        display: none;
+    }
+}
