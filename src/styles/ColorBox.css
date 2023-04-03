@@ -136,6 +136,9 @@
     .ColorBox {
         width: 25%;
     }
+    .SingleColorPalette .ColorBox {
+        height: 33.333%;
+    }
 }
 
 @media screen and (max-width: 991.98px) {
@@ -155,5 +158,8 @@
     }
     .SingleColorPalette .ColorBox {
         height: 10%;
+    }
+    .copy-msg h1 {
+        font-size: 5rem;
     }
 }
