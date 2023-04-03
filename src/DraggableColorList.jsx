@@ -6,7 +6,7 @@ export default function DraggableColorList(props) {
     const { colors, setColors, removeColor } = props;
     return (
         <ReactSortable
-            // tag="div"
+            tag="div"
             list={colors}
             setList={setColors}
             style={{ height: "100%" }}

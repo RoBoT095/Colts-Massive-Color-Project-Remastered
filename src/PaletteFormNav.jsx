@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// Material UI Stuff Starts
+// MUI start
 import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
@@ -10,10 +10,12 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-// Material UI Stuff Ends
-import { drawerWidth } from "./NewPaletteForm";
+// MUI end
+import { DRAWER_WIDTH } from "./constants";
 import PaletteMetaForm from "./PaletteMetaForm";
 import "./styles/PaletteFormNav.css";
+
+const drawerWidth = DRAWER_WIDTH;
 
 const AppBar = styled(MuiAppBar, {
     shouldForwardProp: (prop) => prop !== "open",
