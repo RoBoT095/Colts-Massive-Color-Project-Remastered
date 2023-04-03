@@ -5,7 +5,7 @@ import "./styles/PaletteList.css";
 
 export default class PaletteList extends Component {
     render() {
-        const { palettes } = this.props;
+        const { palettes, deletePalette } = this.props;
         return (
             <div className="PaletteList-root">
                 <div className="PaletteList-container">
@@ -17,7 +17,12 @@ export default class PaletteList extends Component {
                     </nav>
                     <div className="PaletteList-palettes">
                         {palettes.map((palette) => (
-                            <MiniPalette {...palette} key={palette.id} />
+                            <MiniPalette
+                                {...palette}
+                                key={palette.id}
+                                id={palette.id}
+                                handleDelete={deletePalette}
+                            />
                         ))}
                     </div>
                 </div>

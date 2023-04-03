@@ -16,6 +16,10 @@ export default function App() {
         return palettes.find((palette) => palette.id === id);
     };
 
+    const deletePalette = (id) => {
+        setPalettes(palettes.filter((palette) => palette.id !== id));
+    };
+
     const PaletteWrapper = () => {
         const { id } = useParams();
         const palette = generatePalette(findPalette(id));
@@ -42,7 +46,12 @@ export default function App() {
                 <Route
                     index
                     path="/"
-                    element={<PaletteList palettes={palettes} />}
+                    element={
+                        <PaletteList
+                            palettes={palettes}
+                            deletePalette={deletePalette}
+                        />
+                    }
                 />
                 <Route
                     path="/palette/new"
