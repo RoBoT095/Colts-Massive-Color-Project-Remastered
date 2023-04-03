@@ -9,6 +9,9 @@
 .MiniPalette-root:hover {
     cursor: pointer;
 }
+.MiniPalette-root:hover .MiniPalette-deleteIcon {
+    opacity: 1;
+}
 
 .MiniPalette-colors {
     background-color: #dae1e4;
@@ -41,4 +44,21 @@
     margin: 0 auto;
     position: relative;
     margin-bottom: -3.5px;
+}
+
+.MiniPalette-delete {
+}
+
+.MiniPalette-deleteIcon {
+    color: white;
+    background-color: #eb3d30;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 10px;
+    z-index: 5;
+    opacity: 0;
+    transition: all 0.3s ease-in-out !important;
 }
