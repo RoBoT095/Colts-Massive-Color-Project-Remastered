@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Routes, Route, useParams } from "react-router-dom";
+import { Routes, Route, useParams, useLocation } from "react-router-dom";
 import "./styles/App.css";
 import PaletteList from "./PaletteList";
 import NewPaletteForm from "./NewPaletteForm";
@@ -7,6 +7,7 @@ import Palette from "./Palette";
 import SingleColorPalette from "./SingleColorPalette";
 import seedColors from "./seedColors";
 import { generatePalette } from "./colorHelpers";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 export default function App() {
     const savedPalettes = JSON.parse(window.localStorage.getItem("palettes"));
@@ -40,34 +41,52 @@ export default function App() {
         window.localStorage.setItem("palettes", JSON.stringify(palettes));
     }, [palettes]);
 
+    const location = useLocation();
     return (
-        <div className="App">
-            <Routes>
-                <Route
-                    index
-                    path="/"
-                    element={
-                        <PaletteList
-                            palettes={palettes}
-                            deletePalette={deletePalette}
-                        />
-                    }
-                />
-                <Route
-                    path="/palette/new"
-                    element={
-                        <NewPaletteForm
-                            savePalette={savePalette}
-                            palettes={palettes}
-                        />
-                    }
-                />
-                <Route path="/palette/:id" element={<PaletteWrapper />} />
-                <Route
-                    path="/palette/:paletteId/:colorId"
-                    element={<SingleColorWrapper />}
-                />
-            </Routes>
-        </div>
+        <TransitionGroup className="App" location={location}>
+            <CSSTransition key={location.key} classNames="fade" timeout={500}>
+                <Routes location={location}>
+                    <Route
+                        index
+                        path="/"
+                        element={
+                            <div className="page">
+                                <PaletteList
+                                    palettes={palettes}
+                                    deletePalette={deletePalette}
+                                />
+                            </div>
+                        }
+                    />
+                    <Route
+                        path="/palette/new"
+                        element={
+                            <div className="page">
+                                <NewPaletteForm
+                                    savePalette={savePalette}
+                                    palettes={palettes}
+                                />
+                            </div>
+                        }
+                    />
+                    <Route
+                        path="/palette/:id"
+                        element={
+                            <div className="page">
+                                <PaletteWrapper />
+                            </div>
+                        }
+                    />
+                    <Route
+                        path="/palette/:paletteId/:colorId"
+                        element={
+                            <div className="page">
+                                <SingleColorWrapper />
+                            </div>
+                        }
+                    />
+                </Routes>
+            </CSSTransition>
+        </TransitionGroup>
     );
 }
