@@ -37,6 +37,7 @@ export default function PaletteMetaForm(props) {
             emoji: emoji.native,
         };
         handleSubmit(newPalette);
+        setStage("");
     };
 
     const { newPaletteName, setNewPaletteName, handleSubmit, hideForm } = props;
