@@ -1,15 +1,9 @@
-import React from "react";
+import React, { PureComponent } from "react";
 import { useNavigate } from "react-router-dom";
 import DeleteIcon from "@mui/icons-material/Delete";
 import "./styles/MiniPalette.css";
 
-export default function MiniPalette({
-    paletteName,
-    emoji,
-    colors,
-    id,
-    openDialog,
-}) {
+function MiniPalette({ paletteName, emoji, colors, id, openDialog }) {
     const history = useNavigate();
 
     const handleClick = (e) => {
@@ -42,3 +36,4 @@ export default function MiniPalette({
         </div>
     );
 }
+export default React.memo(MiniPalette, () => true);
