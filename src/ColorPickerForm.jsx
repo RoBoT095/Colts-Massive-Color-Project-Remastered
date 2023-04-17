@@ -47,7 +47,11 @@ export default function ColorPickerForm(props) {
                 color={currentColor}
                 onChangeComplete={updateCurrentColor}
             />
-            <ValidatorForm autoComplete="off" onSubmit={handleSubmit}>
+            <ValidatorForm
+                autoComplete="off"
+                onSubmit={handleSubmit}
+                instantValidate={false}
+            >
                 <TextValidator
                     id="filled-error-helper-text"
                     label="Color Name"

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { DRAWER_WIDTH } from "./constants";
 // MUI start
 import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
@@ -13,8 +14,8 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import DraggableColorList from "./DraggableColorList";
 import PaletteFormNav from "./PaletteFormNav";
 import ColorPickerForm from "./ColorPickerForm";
-import { DRAWER_WIDTH } from "./constants";
 import "./styles/NewPaletteForm.css";
+import seedColors from "./seedColors";
 
 const drawerWidth = DRAWER_WIDTH;
 
@@ -54,7 +55,7 @@ export default function NewPaletteForm(props) {
     };
 
     const [open, setOpen] = useState(true);
-    const [colors, setColors] = useState(props.palettes[0].colors);
+    const [colors, setColors] = useState(seedColors[0].colors);
     const [newPaletteName, setNewPaletteName] = useState("");
 
     const handleDrawerOpen = () => setOpen(true);

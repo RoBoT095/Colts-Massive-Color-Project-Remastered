@@ -31,6 +31,10 @@
     transform: scale(1.5);
 }
 
+.DCB-boxContent .light-text {
+    color: rgba(255, 255, 255, 0.8);
+}
+
 @media screen and (max-width: 1199.98px) {
     .DraggableColorBox {
         width: 25%;
