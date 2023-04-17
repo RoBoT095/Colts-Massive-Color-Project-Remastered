@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { CopyToClipboard } from "react-copy-to-clipboard";
 import { Link } from "react-router-dom";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 import chroma from "chroma-js";
 import "./styles/ColorBox.css";
 

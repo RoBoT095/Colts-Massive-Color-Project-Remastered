@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
 // MUI start
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
@@ -7,7 +8,6 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 // MUI end
-import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
 import data from "@emoji-mart/data";
 import Picker from "@emoji-mart/react";
 

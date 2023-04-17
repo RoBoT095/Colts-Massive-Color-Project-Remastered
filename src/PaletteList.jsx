@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 // MUI start
 import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
@@ -15,7 +16,6 @@ import blue from "@mui/material/colors/blue";
 import red from "@mui/material/colors/red";
 // MUI end
 import MiniPalette from "./MiniPalette";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
 import "./styles/PaletteList.css";
 
 export default function PaletteList(props) {
