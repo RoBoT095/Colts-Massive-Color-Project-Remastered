@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import DeleteIcon from "@mui/icons-material/Delete";
 import "./styles/MiniPalette.css";
