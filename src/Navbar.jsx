@@ -10,6 +10,8 @@ import CloseIcon from "@mui/icons-material/Close";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import "./styles/Navbar.css";
+// Logo is made by Jared from Udemy
+import CoolerLogo from "./styles/CoolerPaletteLogo.png";
 
 export default function Navbar(props) {
     const [format, setFormat] = useState("hex");
@@ -27,7 +29,14 @@ export default function Navbar(props) {
     return (
         <header className="Navbar">
             <div className="logo">
-                <Link to="/">reactcolorpicker</Link>
+                {/* <Link to="/">reactcolorpicker</Link> */}
+                <Link to="/">
+                    <img
+                        src={CoolerLogo}
+                        alt="reactcolorpicker"
+                        height="50px"
+                    />
+                </Link>
             </div>
             {showSlider && (
                 <div className="slider-container">
